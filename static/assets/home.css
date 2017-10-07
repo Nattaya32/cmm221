@@ -1,0 +1,34 @@
+header.navbar-tabs {
+  justify-content: center; 
+}
+.highlight {
+  margin-bottom: 0 !important; /*จะให้ความเฉพาะเจาะจงมากกว่า*/
+}
+
+.highlight .highlight-item {
+  height: 416px;
+  background: url(/assets/images/home/banner/highlight.jpg) no-repeat center/cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.highlight .highlight-item h1{
+  font-size: 100px;
+}
+.thumbnail {
+  border-top:0.1rem solid #ffffff; /*--ไซต์-ประเภทขอบสีขอบ*/
+}
+.thumbnail .thumbnail-item + .thumbnail-item {
+  border-left: .1rem solid #ffffff; /*เอาขอบทั้งซ้ายขวาออก*/
+}
+.thumbnail .thumnail-item {   /*ใส่ข้อความในรูป4รูป*/
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  color: #ffffff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 10rem; /*160px*/
+}
