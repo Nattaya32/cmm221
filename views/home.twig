@@ -1,59 +1,29 @@
-<!DOCTYPE html>
-<html lange = 'en'> <!-- ภาษาที่ใช้ในเว็บเรา -->
-<head>
-	<meta charset="UTF-8"> <!-- UTF-8 จะสามารถแสดงภาษาไทยได้ -->
-	<title> CMM 19</title> <!--ชื่อแท็บแสดงบนเว็บ -->
-	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.5.3/css/bulma.min.css">
-	<link rel="stylesheet"   type="text/css" href="/assets/home.css"> <!--ลิ้งมาจาก home ที่เขียนไว้ว่าอยากให้ข้อความเราเป็นยังไง ต้องเขียนที่อยู่ในโฟลเดอร์ให้ถูกต้อง-->
-</head>
-<body> <!-- เนื้อหาที่จะให้แสดง -->
-	<header>
-		<div class="has-text-centered"> <!-- จัดรูปให้อยู่ตรงกลาง-->
-		<img src="/assets/images/logo.png" width="145" height="auto">
-	</div>
-		<nav class="navbar-tabs"> <!--ทำแถบเมนูบาร์-->
-			<a href="#" class="navbar-item">WORK</a> <!--hrefลิ้งไปที่อื่น แต่ใช้#ไว้เพื่อไม่ให้ลิ้งค์ไปที่อื่น-->
-			<a href="#" class="navbar-item">go</a>
-			<a href="#" class="navbar-item">INTEREST</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-			<a href="#" class="navbar-item">WORK</a>
-		
-		</nav>
-	</header>
+	{% extends 'layout/base.twig' %}
+	{% block stylesheet %}
+	<link rel="stylesheet" type="text/css" href="/assets/home.css">
+	{% endblock %}
+	{% block content %}
 
 		<main>
 			<section class="banner">
 				<div class="highlight">
 					<div class="columns">
-						<div class="column highlight-item">
-							 <h1>Love</h1>
+						<div class="column highlight-item" style="background-image: url({{highlight.url}});">
+							 <h1>{{highlight.title}}</h1>
 						</div>
 					</div>
 				</div>
 			</div>
 				<div class="thumbnail">
 					<div class="columns is-marginless"> <!-- เอาขอบที่ติดลบออก เพื่อให้เห็นขอบที่เราสร้าง-->
+						{% for item in thumbnail %}
 						<div class="column thumbnail-item is-paddingless has-text-centered" 
-						style="background-image: url(/assets/images/home/banner/thumbnail-1.jpg);">
-							School
+						style="background-image: url({{item.url}});">
+							{{item.title}}
 						<!--<img src="/assets/images/home/banner/thumbnail-1.jpg" width="100%" height="auto">--> </div>
-
-						<div class="column thumbnail-item is-paddingless has-text-centered" 
-						style="background-image: url(/assets/images/home/banner/thumbnail-2.jpg);">
-							BANANA</div>
-
-						<div class="column thumbnail-item is-paddingless has-text-centered" 
-						style="background-image: url(/assets/images/home/banner/thumbnail-3.jpg);">
-							CCCCC</div>
-
-						<div class="column thumbnail-item is-paddingless has-text-centered" 
-						style="background-image: url(/assets/images/home/banner/thumbnail-4.jpg);">
-							AAAAA</div>
-						</div>
+						{% endfor %}
 					</div>
+				</div>
 			</section>
 
 			<section class="section we-present">
@@ -211,5 +181,4 @@
 				</div>
 			</section>
 		</main>
-</body>
-</html>
+{% endblock %}
